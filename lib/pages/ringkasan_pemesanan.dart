@@ -59,6 +59,7 @@ class RingkasanPemesananPage extends StatelessWidget {
     final String hargaTerformat = _formatHarga(pesanan.totalHarga, pesanan.currency);
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Detail Pesanan'),
         backgroundColor: Colors.blueAccent,

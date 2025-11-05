@@ -267,7 +267,7 @@ class _DetailPenitipanPageState extends State<DetailPenitipanPage> {
                   backgroundColor: _primaryColor,
                   padding: const EdgeInsets.symmetric(vertical: 8),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
+                      borderRadius: BorderRadius.circular(8)),
                 ),
                 onPressed: _goToPemesanan,
                 child: const Text(

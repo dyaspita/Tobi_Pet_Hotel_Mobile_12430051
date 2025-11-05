@@ -213,8 +213,12 @@ class _PemesananPageState extends State<PemesananPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Formulir Pemesanan'),
+        title: const Text(
+      'Formulir Pemesanan',
+      style: TextStyle(color: Colors.white), 
+      ),
         backgroundColor: _primaryColor,
       ),
       body: SingleChildScrollView(
