@@ -170,11 +170,6 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(
-                        icon: const Icon(Icons.notifications_none,
-                            color: Colors.black),
-                        onPressed: () {},
-                      ),
                       GestureDetector(
                         onTap: () => _onItemTapped(2),
                         child: const CircleAvatar(
