@@ -17,6 +17,7 @@ import 'pages/pemesanan.dart';
 import 'pages/ringkasan_pemesanan.dart';
 import 'pages/riwayat.dart';
 import 'pages/splash_screen.dart'; 
+import 'pages/kesanpesan.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
         '/profile': (context) => const ProfilePage(),
         '/ringkasan': (context) => const RingkasanPemesananPage(),
         '/riwayat': (context) => const RiwayatPage(),
+        '/FeedbackPage': (context) => const FeedbackPage(),
         '/detail_penitipan': (context) {
           final args = ModalRoute.of(context)?.settings.arguments;
           final layananData = (args is Map)

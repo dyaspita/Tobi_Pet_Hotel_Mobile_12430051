@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart'; 
+import 'kesanpesan.dart'; 
 
 class ProfilePage extends StatefulWidget { 
   const ProfilePage({super.key});
@@ -42,20 +43,33 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Profil Saya', style: TextStyle(color: Colors.black)),
-        backgroundColor: Colors.white,
+        backgroundColor: primaryBlue,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Text(
+          'Profile',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.of(context).pushReplacementNamed('/home');
+          },
+        ),
       ), 
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            CircleAvatar(
+              CircleAvatar(
               radius: 60,
               backgroundColor: primaryBlue.withOpacity(0.1),
-               backgroundImage: const AssetImage('assets/fotoku.jpg'),
+              child: Icon(
+                Icons.person, 
+                size: 60, 
+                color: primaryBlue,
+              ), 
             ),
             const SizedBox(height: 15),
 
@@ -70,6 +84,20 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 30),
 
             ListTile(
+              leading: Icon(Icons.rate_review, color: primaryBlue),
+              title: const Text('Kesan & Saran Mata Kuliah', style: TextStyle(fontWeight: FontWeight.w600)),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FeedbackPage()),
+                );
+              },
+            ),
+            const Divider(),
+
+            // ListTile Keluar
+            ListTile(
               leading: const Icon(Icons.logout, color: Colors.red),
               title: const Text('Keluar', style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
               trailing: const Icon(Icons.chevron_right),
@@ -78,25 +106,6 @@ class _ProfilePageState extends State<ProfilePage> {
             const Divider(),
             
             const SizedBox(height: 20),
-
-            _buildInfoCard(
-              title: "Nama : Wahyu Dyas Puspitasari",
-              subtitle: "NIM : 124230051",
-              icon: Icons.book,
-              color: primaryBlue,
-            ),
-            _buildInfoCard(
-              title: "Kesan",
-              subtitle: "Mata kuliah yang menurut saya sangat seru dan menantang yang memberikan sebuah pengalaman yang berharga ",
-              icon: Icons.message,
-              color: primaryBlue,
-            ),
-            _buildInfoCard(
-              title: "Saran",
-              subtitle: "Pembelajaran sudah bagus dan menarik, saran mungkin bisa ditambah sesi sharing dengan mahasiswa mengenai project masing-masing",
-              icon: Icons.favorite,
-              color: primaryBlue,
-            ),
           ],
         ),
       ),
@@ -110,7 +119,7 @@ class _ProfilePageState extends State<ProfilePage> {
               Navigator.of(context).pushReplacementNamed('/home'); 
               break;
             case 1:
-              Navigator.of(context).pushReplacementNamed('/ringkasan'); 
+              Navigator.of(context).pushReplacementNamed('/riwayat'); 
               break;
             case 2:
               break;

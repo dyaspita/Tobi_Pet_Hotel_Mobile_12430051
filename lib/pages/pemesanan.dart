@@ -216,10 +216,14 @@ class _PemesananPageState extends State<PemesananPage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
-      'Formulir Pemesanan',
-      style: TextStyle(color: Colors.white), 
-      ),
+            'Pemesanan', 
+            style: TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255), 
+                fontWeight: FontWeight.bold 
+            )
+        ),
         backgroundColor: _primaryColor,
+        iconTheme: const IconThemeData(color: Colors.white), 
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),

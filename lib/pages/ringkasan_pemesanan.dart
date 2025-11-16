@@ -51,7 +51,17 @@ class RingkasanPemesananPage extends StatelessWidget {
 
     if (pesanan == null) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Ringkasan Pemesanan')),
+        appBar: AppBar(
+        title: const Text(
+            'Pemesanan', 
+            style: TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255), 
+                fontWeight: FontWeight.bold 
+            )
+        ),
+        backgroundColor: Color.fromARGB(255, 68, 119, 248),
+        iconTheme: const IconThemeData(color: Colors.white), 
+      ),
         body: const Center(child: Text('Gagal memuat detail pesanan.')),
       );
     }
@@ -61,8 +71,8 @@ class RingkasanPemesananPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Detail Pesanan'),
-        backgroundColor: Colors.blueAccent,
+        title: const Text('Detail Pesanan', style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold)),
+        backgroundColor: const Color.fromARGB(255, 68, 119, 248),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),

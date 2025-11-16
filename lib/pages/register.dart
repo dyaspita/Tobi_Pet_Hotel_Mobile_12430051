@@ -30,22 +30,20 @@ class _RegisterPageState extends State<Register> {
         setState(() => _errorMessage = 'Username "$username" sudah terdaftar.');
         return;
       }
-
       final newUser = User(
         username: username,
         password: hashPassword(password),
         role: 'user',
-      );
-
+      ); 
       await userBox.put(username, newUser);
 
-      await SessionManager.saveLogin(username, newUser.role);
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Pendaftaran berhasil! Silakan login.')),
+      );
+      Navigator.of(context).pushReplacementNamed('/login');
+    }
 
-      if (mounted) {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(const SnackBar(content: Text('Pendaftaran berhasil!')));
-        Navigator.of(context).pushReplacementNamed('/login');
-      }
     }
   }
 
